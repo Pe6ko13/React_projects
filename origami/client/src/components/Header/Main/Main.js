@@ -1,10 +1,16 @@
 import "./Main.css";
+import Post from "../Post/Post";
 
-const Main = () => {
+const Main = ({ posts }) => {
   return (
     <main className="main-wrapper">
       <h1>Sooooooooooooo Heading</h1>
-      <p>some posts</p>
+
+      <div className="posts">
+        {posts.map((x) => (
+          <Post key={x.id} content={x.content} author={x.author} />
+        ))}
+      </div>
     </main>
   );
 };

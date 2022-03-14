@@ -2,13 +2,28 @@
   "posts": [
     {
       "id": 1,
-      "content": "Some content",
+      "content": "This will look lovely in a table setting! Use this to dress up your dining table and impress your guests with your creativity. I've also seen people use this design as a bread-bowl in a restaurant! It looked fantastic, such a nice novelty, but you would need an enormous piece of paper for that one! If you're going to try that, I would suggest a one metre by one metre piece of paper!",
       "author": "Pesho"
     },
     {
       "id": 2,
-      "content": "More content",
+      "content": "I'd love to hear from you if you've made an origami lotus! Click the link below to share a photo of your creation, and to see what other origami designs people have made:",
       "author": "Gosho"
+    },
+    {
+      "id": 3,
+      "content": "Fold the square in half, diagonally, to make a triangle.Open the last fold you just made and make sure the folded line is facing upwards.Fold the two points on the base of the triangle upwards as shown.",
+      "author": "Ivan"
+    },
+    {
+      "id": 4,
+      "content": "You only need one square sheet of paper to make an origami lotus flower, and you might need to make it quite large. The smaller and thinner the paper you use, the more difficult it is to the petals at the end. One thing that works very well is using this design for napkins or paper serviettes.",
+      "author": "Dimi"
+    },
+    {
+      "id": 5,
+      "content": "If you go into a specialist paper store or an origami store, you should be able to find a perfect paper for this model. Try handmade unryushi if you can find it, it is a beautiful type of Japanese paper, which is textural and flexible.",
+      "author": "Acho"
     }
   ]
 }
