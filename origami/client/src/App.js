@@ -6,6 +6,7 @@ import style from "./App.module.css";
 import Header from "./components/Header/Header/Header";
 import Menu from "./components/Header/Menu/Menu";
 import Main from "./components/Header/Main";
+import Footer from "./components/Header/Footer/Footer";
 
 // function App() {
 //   return (
@@ -57,6 +58,8 @@ class App extends Component {
           <Menu onMenuItemClick={this.onMenuItemClick.bind(this)} />
           <Main posts={this.getPosts()} />
         </div>
+
+        <Footer />
       </div>
     );
   }

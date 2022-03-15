@@ -1,4 +1,3 @@
-nav .listItem,
 footer .listItem {
   display: inline-block;
   height: auto;
@@ -29,24 +28,3 @@ footer .listItem:hover {
   border-top: 2px solid #234465;
   font-weight: bold;
 }
-
-/* Post Styles */
-
-/* Footer Styles */
-
-.Footer {
-  width: 100%;
-  height: 18vh;
-  background-color: #ffa000;
-  color: #234465;
-  border-top: 2px solid #234465;
-  border-bottom: 2px solid #234465;
-  margin-bottom: 1%;
-}
-
-.Footer p {
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Footer Styles */
