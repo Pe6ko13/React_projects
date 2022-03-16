@@ -58,11 +58,13 @@ class App extends Component {
 
         <div className={style.container}>
           <Menu onMenuItemClick={this.onMenuItemClick.bind(this)} />
-          <Routes>
+          {/* <Routes>
             <Route exact path="/" element={<Main posts={this.getPosts()} />} />
             <Route path="/about/:name" element={<About />} />
             <Route render={() => <h1>Error !!!</h1>} />
-          </Routes>
+          </Routes> */}
+
+          <Main posts={this.getPosts()} />
         </div>
 
         <Footer />

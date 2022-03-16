@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import style from "./Header.module.css";
 import NavigationItem from "./NavigationList/NavigationItem.js";
 import listStyle from "./NavigationList/NavigationItem.module.css";
@@ -11,12 +10,8 @@ const Header = () => {
           <img src="./white-origami-bird.png" alt="white origami" />
         </li>
 
-        <Link to="/">
-          <NavigationItem>Home</NavigationItem>
-        </Link>
-        <Link to="/about/pesho">
-          <NavigationItem>About</NavigationItem>
-        </Link>
+        <NavigationItem>Going to 1</NavigationItem>
+        <NavigationItem>Going to 2</NavigationItem>
         <NavigationItem>Going to 3</NavigationItem>
         <NavigationItem>Going to 4</NavigationItem>
         <NavigationItem>Going to 5</NavigationItem>
