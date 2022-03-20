@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const PetElement = ({ id, name, description, imageURL, category, likes }) => {
   return (
     <li className="otherPet">
@@ -8,14 +10,14 @@ const PetElement = ({ id, name, description, imageURL, category, likes }) => {
       </p>
       <p className="description">{description}</p>
       <div className="pet-info">
-        <a href="#">
+        <Link to="#">
           <button className="button">
             <i className="fas fa-heart"></i> Pet
           </button>
-        </a>
-        <a href="#">
+        </Link>
+        <Link to={`/pets/details/${id}`}>
           <button className="button">Details</button>
-        </a>
+        </Link>
         <i className="fas fa-heart"></i> <span> {likes}</span>
       </div>
     </li>

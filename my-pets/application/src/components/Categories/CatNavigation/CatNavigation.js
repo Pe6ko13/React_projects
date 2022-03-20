@@ -13,19 +13,19 @@ const CatNavigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/categories/cats">Cats</NavLink>
+          <NavLink to="/categories/Cat">Cats</NavLink>
         </li>
         <li>
-          <NavLink to="/categories/dogs">Dogs</NavLink>
+          <NavLink to="/categories/Dog">Dogs</NavLink>
         </li>
         <li>
-          <NavLink to="/categories/parrots">Parrots</NavLink>
+          <NavLink to="/categories/Parrot">Parrots</NavLink>
         </li>
         <li>
-          <NavLink to="/categories/reptiles">Reptiles</NavLink>
+          <NavLink to="/categories/Reptile">Reptiles</NavLink>
         </li>
         <li>
-          <NavLink to="/categories/other">Other</NavLink>
+          <NavLink to="/categories/Other">Other</NavLink>
         </li>
       </ul>
       <style jsx>{`

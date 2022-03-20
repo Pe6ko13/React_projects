@@ -1,5 +1,7 @@
 import { Component } from "react";
+import { useParams } from "react-router-dom";
 
+import * as petService from "../../services/petService";
 import PetElement from "../PetElement/PetElement";
 import CatNavigation from "./CatNavigation/CatNavigation";
 
@@ -9,14 +11,25 @@ class Categories extends Component {
 
     this.state = {
       pets: [],
+      currentCategory: "all",
     };
   }
 
   componentDidMount() {
-    fetch(" http://localhost:5000/pets")
-      .then((res) => res.json())
-      .then((res) => this.setState({ pets: res }))
-      .catch((error) => console.log(error));
+    petService.getAll().then((res) => this.setState({ pets: res }));
+  }
+
+  componentDidUpdate(prevProps) {
+    let category = this.props.params.category;
+    if (prevProps.params.category == category) {
+      return;
+    }
+    petService.getAll(category).then((res) =>
+      this.setState({
+        pets: res,
+        currentCategory: category,
+      })
+    );
   }
 
   render() {
@@ -36,4 +49,4 @@ class Categories extends Component {
   }
 }
 
-export default Categories;
+export default (props) => <Categories {...props} params={useParams()} />;
