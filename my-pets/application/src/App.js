@@ -6,6 +6,7 @@ import Categories from "./components/Categories/Categories";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import PetDetails from "./components/PetDetails/PetDetails";
+import CreatePet from "./components/CreatePet/CreatePet";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Categories />} />
         <Route path="/categories/:category" element={<Categories />} />
         <Route path="/pets/details/:petId" element={<PetDetails />} />
+        <Route path="/pets/create" element={<CreatePet />} />
       </Routes>
 
       <Footer />

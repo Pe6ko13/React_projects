@@ -14,3 +14,18 @@ export const getOne = (petId) => {
     .then((res) => res.json())
     .catch((error) => console.log(error));
 };
+
+export const createPet = (petName, description, imageURL, category) => {
+  let pet = {
+    name: petName,
+    description,
+    imageURL,
+    category,
+  };
+
+  return fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(pet),
+  });
+};
