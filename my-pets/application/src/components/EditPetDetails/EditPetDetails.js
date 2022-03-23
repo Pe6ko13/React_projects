@@ -11,8 +11,7 @@ const EditPetDetails = () => {
   }, []);
 
   const onDescriptionEdit = (e) => {
-    e.preventdefault();
-    console.log(e.target);
+    e.preventDefault();
   };
 
   return (
@@ -25,7 +24,11 @@ const EditPetDetails = () => {
         <img src={pet.imageURL} />
       </p>
       <form onSubmit={onDescriptionEdit}>
-        <textarea type="text" name="description"></textarea>
+        <textarea
+          type="text"
+          name="description"
+          defaultValue={pet.description}
+        ></textarea>
         <button className="button">Save</button>
       </form>
     </section>
