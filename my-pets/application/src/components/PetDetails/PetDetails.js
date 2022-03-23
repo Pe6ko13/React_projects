@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import * as petService from "../../services/petService";
 
@@ -26,6 +27,14 @@ const PetDetails = () => {
         <img src={pet.imageURL} />
       </p>
       <p class="description">{pet.description}</p>
+      <div class="pet-info">
+        <Link to={`/pets/details/${pet.id}/edit`}>
+          <button class="button">Edit</button>
+        </Link>
+        <Link to="#">
+          <button class="button">Delete</button>
+        </Link>
+      </div>
     </section>
   );
 };

@@ -6,6 +6,7 @@ import Categories from "./components/Categories/Categories";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import PetDetails from "./components/PetDetails/PetDetails";
+import EditPetDetails from "./components/EditPetDetails/EditPetDetails";
 import CreatePet from "./components/CreatePet/CreatePet";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Categories />} />
         <Route path="/categories/:category" element={<Categories />} />
         <Route path="/pets/details/:petId" element={<PetDetails />} />
+        <Route path="/pets/details/:petId/edit" element={<EditPetDetails />} />
         <Route path="/pets/create" element={<CreatePet />} />
       </Routes>
 
