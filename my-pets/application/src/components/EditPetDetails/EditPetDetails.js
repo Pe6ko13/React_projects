@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as petservice from "../../services/petService";
 import InputError from "../Shared/inputError/inputError";
 
 const EditPetDetails = () => {
   let params = useParams();
+  let navigate = useNavigate();
   const [pet, setPet] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -12,9 +13,14 @@ const EditPetDetails = () => {
     petservice.getOne(params.petId).then((res) => setPet(res));
   }, []);
 
-  const onDescriptionEdit = (e) => {
+  const onDescriptionSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.description.value);
+
+    let updatedPet = { ...pet, description: e.target.description.value };
+
+    petservice
+      .editDetails(params.petId, updatedPet)
+      .then(navigate(`/pets/details/${params.petId}`));
   };
 
   const onDescriptionChange = (e) => {
@@ -34,7 +40,7 @@ const EditPetDetails = () => {
       <p className="img">
         <img src={pet.imageURL} />
       </p>
-      <form onSubmit={onDescriptionEdit}>
+      <form onSubmit={onDescriptionSubmit}>
         <textarea
           type="text"
           name="description"
