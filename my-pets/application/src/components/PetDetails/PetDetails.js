@@ -12,16 +12,21 @@ const PetDetails = () => {
     petService.getOne(match.petId).then((res) => setPet(res));
   }, [match]);
 
+  const onLikeButtonClick = () => {
+    let incrementedLikes = Number(pet.likes) + 1;
+    petService.pet(match.petId, incrementedLikes).then(() => {
+      setPet((state) => ({ ...state, likes: incrementedLikes }));
+    });
+  };
+
   return (
     <section className="detailsOtherPet">
       <h3>{pet.name}</h3>
       <p>
-        Pet counter: {pet.likes}
-        <a href="#">
-          <button className="button">
-            <i className="fas fa-heart"></i> Pet
-          </button>
-        </a>
+        <button className="button" onClick={onLikeButtonClick}>
+          <span>{pet.likes}</span>
+          <i className="fas fa-heart"></i>
+        </button>
       </p>
       <p className="img">
         <img src={pet.imageURL} />
