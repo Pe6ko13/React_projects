@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ user }) => {
   return (
     <header id="site-header">
       <nav className="navbar">
@@ -14,30 +14,34 @@ const Header = () => {
               Add Pet
             </Link>
           </div>
-          <div className="second-bar">
-            <ul>
-              <li>Welcome, Pet</li>
-              <li>
-                <Link to="/logout">
-                  <i className="fas fa-sign-out-alt"></i> Logout
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section className="navbar-anonymous">
-          <ul>
-            <li>
-              <Link to="/register">
-                <i className="fas fa-user-plus"></i> Register
-              </Link>
-            </li>
-            <li>
-              <Link to="/login">
-                <i className="fas fa-sign-in-alt"></i> Login
-              </Link>
-            </li>
-          </ul>
+          {user ? (
+            <div className="second-bar">
+              <ul>
+                <li>Welcome, {user.email}!</li>
+
+                <li>
+                  <Link to="/logout">
+                    <i className="fas fa-sign-out-alt"></i> Logout
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="navbar-anonymous">
+              <ul>
+                <li>
+                  <Link to="/register">
+                    <i className="fas fa-user-plus"></i> Register
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login">
+                    <i className="fas fa-sign-in-alt"></i> Login
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
         </section>
       </nav>
       <style>

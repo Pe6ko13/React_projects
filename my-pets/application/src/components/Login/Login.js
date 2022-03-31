@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import firebase from "../../utils/firebase";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const onLoginFormSubmitHandler = (e) => {
     e.preventDefault();
     const username = e.target.username.value;
@@ -9,7 +12,11 @@ const Login = () => {
     firebase
       .auth()
       .signInWithEmailAndPassword(username, password)
-      .then((userCredantial) => console.log(userCredantial));
+      .then(() => navigate("/"))
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   };
 
   return (

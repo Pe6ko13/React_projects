@@ -11,11 +11,25 @@ import EditPetDetails from "./components/EditPetDetails/EditPetDetails";
 import CreatePet from "./components/CreatePet/CreatePet";
 import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
+import { useEffect, useState } from "react";
+import { auth } from "./utils/firebase";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+  }, []);
+
   return (
     <div className="container">
-      <Header />
+      <Header user={user} />
 
       <Routes>
         <Route path="/" element={<Categories />} />

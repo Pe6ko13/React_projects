@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../utils/firebase";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const onRegisterSubmit = (e) => {
     e.preventDefault();
 
@@ -9,8 +12,10 @@ const Register = () => {
 
     auth
       .createUserWithEmailAndPassword(username, password)
-      .then((userCredential) => {
-        console.log("Register");
+      .then(() => navigate("/"))
+      .catch((error) => {
+        let errorCode = error.code;
+        let errorMessage = error.message;
       });
   };
 
