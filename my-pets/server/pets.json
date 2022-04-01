@@ -6,7 +6,7 @@
       "description": "My dog Yara. 2 months old. doggy hjkhjk",
       "imageURL": "https://cdn1-www.dogtime.com/assets/uploads/2017/09/pit-bull-puppies-2.jpg",
       "category": "Dog",
-      "likes": 38,
+      "likes": 42,
       "_acl": {
         "creator": "5bb0874caccb650325e0227b"
       },
@@ -21,7 +21,7 @@
       "description": "This is my parrot Choko. He is one year old. He likes to sing and talk a lot.",
       "imageURL": "https://cdn.omlet.co.uk/images/originals/fischer's-lovebird.jpg",
       "category": "Parrot",
-      "likes": "21",
+      "likes": 26,
       "_acl": {
         "creator": "5bb088003e67d9190597f9a6"
       },

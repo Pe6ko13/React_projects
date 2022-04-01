@@ -13,6 +13,7 @@ import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
 import { useEffect, useState } from "react";
 import { auth } from "./utils/firebase";
+import CustomErrorBoundary from "./components/CustomErrorBoundary/CustomErrorBoundary";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,23 +32,28 @@ function App() {
     <div className="container">
       <Header user={user} />
 
-      <Routes>
-        <Route path="/" element={<Categories />} />
-        <Route path="/categories/:category" element={<Categories />} />
-        <Route path="/pets/details/:petId" element={<PetDetails />} />
-        <Route path="/pets/details/:petId/edit" element={<EditPetDetails />} />
-        <Route path="/pets/create" element={<CreatePet />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/logout"
-          element={
-            <Logout>
-              <Categories />
-            </Logout>
-          }
-        />
-      </Routes>
+      <CustomErrorBoundary>
+        <Routes>
+          <Route path="/" element={<Categories />} />
+          <Route path="/categories/:category" element={<Categories />} />
+          <Route path="/pets/details/:petId" element={<PetDetails />} />
+          <Route
+            path="/pets/details/:petId/edit"
+            element={<EditPetDetails />}
+          />
+          <Route path="/pets/create" element={<CreatePet />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/logout"
+            element={
+              <Logout>
+                <Categories />
+              </Logout>
+            }
+          />
+        </Routes>
+      </CustomErrorBoundary>
 
       <Footer />
     </div>
