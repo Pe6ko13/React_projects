@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import * as petservice from "../../services/petService";
 import InputError from "../Shared/inputError/inputError";
+import isAuth from "../../hoc/isAuth";
 
 const EditPetDetails = () => {
   let params = useParams();
@@ -54,4 +55,4 @@ const EditPetDetails = () => {
   );
 };
 
-export default EditPetDetails;
+export default isAuth(EditPetDetails);

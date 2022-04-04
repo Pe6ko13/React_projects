@@ -14,6 +14,7 @@ import Register from "./components/Register/Register";
 import { useEffect, useState } from "react";
 import { auth } from "./utils/firebase";
 import CustomErrorBoundary from "./components/CustomErrorBoundary/CustomErrorBoundary";
+import AuthContext from "./contexts/AuthContext";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,34 +29,41 @@ function App() {
     });
   }, []);
 
+  const authInfo = {
+    isAuthenticated: Boolean(user),
+    username: user?.email,
+  };
+
   return (
     <div className="container">
-      <Header user={user} />
+      <AuthContext.Provider value={authInfo}>
+        <Header />
 
-      <CustomErrorBoundary>
-        <Routes>
-          <Route path="/" element={<Categories />} />
-          <Route path="/categories/:category" element={<Categories />} />
-          <Route path="/pets/details/:petId" element={<PetDetails />} />
-          <Route
-            path="/pets/details/:petId/edit"
-            element={<EditPetDetails />}
-          />
-          <Route path="/pets/create" element={<CreatePet />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route
-            path="/logout"
-            element={
-              <Logout>
-                <Categories />
-              </Logout>
-            }
-          />
-        </Routes>
-      </CustomErrorBoundary>
+        <CustomErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Categories />} />
+            <Route path="/categories/:category" element={<Categories />} />
+            <Route path="/pets/details/:petId" element={<PetDetails />} />
+            <Route
+              path="/pets/details/:petId/edit"
+              element={<EditPetDetails />}
+            />
+            <Route path="/pets/create" element={<CreatePet />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/logout"
+              element={
+                <Logout>
+                  <Categories />
+                </Logout>
+              }
+            />
+          </Routes>
+        </CustomErrorBoundary>
 
-      <Footer />
+        <Footer />
+      </AuthContext.Provider>
     </div>
   );
 }

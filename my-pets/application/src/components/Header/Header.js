@@ -1,10 +1,30 @@
 import { Link } from "react-router-dom";
+import { useEffect, useContext } from "react";
+import AuthContext from "../../contexts/AuthContext";
+import { auth } from "../../utils/firebase";
 
-const Header = ({ user }) => {
+const Header = () => {
+  const { username } = useContext(AuthContext);
+
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     return;
+  //   }
+
+  //   auth.currentUser
+  //     .getIdToken()
+  //     .then(function (idToken) {
+  //       return fetch("http://localhost:5001", {
+  //         headers: { Authorization: idToken },
+  //       });
+  //     })
+  //     .then((res) => res.json());
+  // }, [isAuthenticated]);
+
   return (
     <header id="site-header">
       <nav className="navbar">
-        {user ? (
+        {username ? (
           <section className="navbar-dashboard">
             <div className="first-bar">
               <Link to="/">Dashboard</Link>
@@ -17,7 +37,7 @@ const Header = ({ user }) => {
             </div>
             <div className="second-bar">
               <ul>
-                <li>Welcome, {user.email}</li>
+                <li>Welcome, {username}</li>
 
                 <li>
                   <Link to="/logout">
