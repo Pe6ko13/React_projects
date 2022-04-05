@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { auth } from "./utils/firebase";
 import CustomErrorBoundary from "./components/CustomErrorBoundary/CustomErrorBoundary";
 import AuthContext from "./contexts/AuthContext";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -41,7 +42,8 @@ function App() {
 
         <CustomErrorBoundary>
           <Routes>
-            <Route path="/" element={<Categories />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/categories" element={<Categories />} />
             <Route path="/categories/:category" element={<Categories />} />
             <Route path="/pets/details/:petId" element={<PetDetails />} />
             <Route
@@ -55,7 +57,7 @@ function App() {
               path="/logout"
               element={
                 <Logout>
-                  <Categories />
+                  <LandingPage />
                 </Logout>
               }
             />

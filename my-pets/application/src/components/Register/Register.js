@@ -12,7 +12,7 @@ const Register = () => {
 
     auth
       .createUserWithEmailAndPassword(username, password)
-      .then(() => navigate("/"))
+      .then(() => navigate("/categories"))
       .catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;

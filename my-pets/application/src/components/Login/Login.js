@@ -12,7 +12,7 @@ const Login = () => {
     firebase
       .auth()
       .signInWithEmailAndPassword(username, password)
-      .then(() => navigate("/"))
+      .then(() => navigate("/categories"))
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

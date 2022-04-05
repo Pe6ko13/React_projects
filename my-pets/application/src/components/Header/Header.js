@@ -27,7 +27,7 @@ const Header = () => {
         {username ? (
           <section className="navbar-dashboard">
             <div className="first-bar">
-              <Link to="/">Dashboard</Link>
+              <Link to="/categories">Dashboard</Link>
               <Link className="button" to="#">
                 My Pets
               </Link>
