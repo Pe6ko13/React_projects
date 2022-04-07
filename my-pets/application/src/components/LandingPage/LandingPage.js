@@ -1,7 +1,7 @@
 const LandingPage = () => {
   return (
     <section className="basic">
-      <h1>Welcome to pet my pet!</h1>
+      <h1>Welcome to Pet My Pet</h1>
     </section>
   );
 };

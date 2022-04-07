@@ -28,9 +28,7 @@ const Header = () => {
           <section className="navbar-dashboard">
             <div className="first-bar">
               <Link to="/categories">Dashboard</Link>
-              <Link className="button" to="#">
-                My Pets
-              </Link>
+
               <Link className="button" to="/pets/create">
                 Add Pet
               </Link>
