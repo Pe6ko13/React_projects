@@ -4,22 +4,25 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import Products from "./components/Products";
 import Cart from "./components/Cart";
+import { ShopProvider } from "./context/ShopContext";
 
 function App() {
   return (
-    <Wrapper>
-      <TitleWrapper>
-        <h1>DC Clothing Shop</h1>
-      </TitleWrapper>
-      <LinksWrapper>
-        <Link to="/">Home</Link>
-        <Link to="/cart">Cart</Link>
-      </LinksWrapper>
-      <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </Wrapper>
+    <ShopProvider>
+      <Wrapper>
+        <TitleWrapper>
+          <h1>DC Clothing Shop</h1>
+        </TitleWrapper>
+        <LinksWrapper>
+          <Link to="/">Home</Link>
+          <Link to="/cart">Cart</Link>
+        </LinksWrapper>
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Wrapper>
+    </ShopProvider>
   );
 }
 
