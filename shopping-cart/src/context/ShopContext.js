@@ -38,7 +38,7 @@ export const ShopProvider = ({ children }) => {
   const value = {
     addToCart,
     removeFromCart,
-    total: state.totalPrice,
+    total: state.total,
     products: state.products,
   };
 
