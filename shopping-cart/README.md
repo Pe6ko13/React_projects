@@ -3,7 +3,7 @@
 
 This project is simple 2 Pages online store with add to cart function
 
-## Technologies
+## Technologies 🤖
 
 * React JS (using: useContext() with useReducer())
 * React-Router: v:6.3
