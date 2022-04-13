@@ -1,1 +1,1 @@
-*Shopping Page with add to cart function*
+***Shopping Page with add to cart function***
