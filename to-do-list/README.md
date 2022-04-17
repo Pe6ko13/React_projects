@@ -4,9 +4,9 @@ Simple To-Do List Project
 
 ## Technologies 🤖
 
--ReactJS
--HTML
--CSS Modules
+- ReactJS
+- HTML
+- CSS Modules
 
 ## Setup
 
