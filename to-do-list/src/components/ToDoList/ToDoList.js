@@ -9,7 +9,7 @@ const ToDoList = () => {
   const { todos, toggleTodo, deleteTodo } = useContext(TodoContext);
   return (
     <div className={styles.todoList}>
-      <h3 className={styles.todoList__title}>TO-DOS</h3>
+      <h3 className={styles.todoList__title}>TO DO LIST</h3>
       <div className={styles.todoList__todos}>
         {todos.map((todo) => (
           <ToDoItem
