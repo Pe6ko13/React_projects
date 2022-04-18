@@ -18,6 +18,10 @@ const ToDoInput = (e) => {
       completed: false,
     };
 
+    if (newTodo.text == "") {
+      return alert("Enter your task first");
+    }
+
     addTodo(newTodo);
 
     setTodo("");
