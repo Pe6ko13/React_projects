@@ -21,7 +21,10 @@ export const ShopProvider = ({ children }) => {
 
     updatedPrice(updateCart);
 
-    dispatch({ type: "REMOVE_FROM_CART", payload: { products: updateCart } });
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      payload: { products: updateCart },
+    });
   };
 
   const updatedPrice = (products) => {

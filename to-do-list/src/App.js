@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
-import TodoInput from "./components/TodoInput/TodoInput";
-import TodoList from "./components/TodoList/TodoList";
+import ToDoInput from "./components/ToDoInput/ToDoInput";
+import ToDoList from "./components/ToDoList/ToDoList";
+import ToDoState from "./context/ToDoState";
 
 function App() {
   return (
     <div className="app">
       <div className="app__todoApp">
-        <TodoInput />
-        <TodoList />
+        <ToDoState>
+          <ToDoInput />
+          <ToDoList />
+        </ToDoState>
       </div>
     </div>
   );
