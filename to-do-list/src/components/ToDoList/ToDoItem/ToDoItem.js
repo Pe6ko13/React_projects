@@ -11,9 +11,16 @@ const ToDoItem = ({ text, clickToggle, clickDelete, completed }) => {
         {text}
       </span>
       <div>
-        <button className={styles.todoItem__toggleBtn} onClick={clickToggle}>
-          CHECKED
-        </button>
+        {completed ? (
+          <button className={styles.todoItem__toggleBtn} onClick={clickToggle}>
+            UNCHECKED
+          </button>
+        ) : (
+          <button className={styles.todoItem__toggleBtn} onClick={clickToggle}>
+            CHECKED
+          </button>
+        )}
+
         <button className={styles.todoItem__deleteBtn} onClick={clickDelete}>
           DELETE
         </button>
