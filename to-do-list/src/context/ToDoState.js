@@ -5,7 +5,7 @@ import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./todo-actions";
 
 const ToDoState = ({ children }) => {
   const initialState = {
-    todos: [], // {id: 1, text: 'text, complated: false}
+    todos: [], // {id: 1, text: 'text, completed: false}
   };
 
   const [state, dispatch] = useReducer(todoReducer, initialState);

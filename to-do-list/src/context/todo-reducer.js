@@ -10,10 +10,17 @@ const todoReducer = (state, action) => {
     case TOGGLE_TODO:
       return {
         ...state,
-        todos: state.todos.map(todo => todo.id === action.payload ? {...todo, complated: !todo.completed} : )
+        todos: state.todos.map((todo) =>
+          todo.id === action.payload
+            ? { ...todo, completed: !todo.completed }
+            : todo
+        ),
       };
     case DELETE_TODO:
-      return {};
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.payload),
+      };
   }
 };
 

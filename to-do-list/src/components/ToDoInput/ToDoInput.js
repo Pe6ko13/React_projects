@@ -15,7 +15,7 @@ const ToDoInput = (e) => {
     const newTodo = {
       id: Math.random(),
       text: todo,
-      complated: false,
+      completed: false,
     };
 
     addTodo(newTodo);

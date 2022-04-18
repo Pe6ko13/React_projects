@@ -15,8 +15,9 @@ const ToDoList = () => {
           <ToDoItem
             key={todo.id}
             text={todo.text}
-            clickToggle={toggleTodo}
-            clickDelete={deleteTodo}
+            completed={todo.completed}
+            clickToggle={() => toggleTodo(todo.id)}
+            clickDelete={() => deleteTodo(todo.id)}
           />
         ))}
       </div>
