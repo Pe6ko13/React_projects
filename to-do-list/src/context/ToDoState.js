@@ -11,10 +11,38 @@ const ToDoState = ({ children }) => {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
   const addTodo = (todo) => {
-    dispatch({});
+    dispatch({
+      type: ADD_TODO,
+      payload: todo,
+    });
   };
 
-  return <TodoContext.Provider value={{}}>{children}</TodoContext.Provider>;
+  const toggleTodo = (todoId) => {
+    dispatch({
+      type: TOGGLE_TODO,
+      payload: todoId,
+    });
+  };
+
+  const deleteTodo = (todoId) => {
+    dispatch({
+      type: DELETE_TODO,
+      payload: todoId,
+    });
+  };
+
+  return (
+    <TodoContext.Provider
+      value={{
+        todos: state.todos,
+        addTodo,
+        toggleTodo,
+        deleteTodo,
+      }}
+    >
+      {children}
+    </TodoContext.Provider>
+  );
 };
 
 export default ToDoState;
