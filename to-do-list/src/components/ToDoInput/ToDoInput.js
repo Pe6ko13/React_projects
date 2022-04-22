@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import styles from "./ToDoInput.module.css";
 import TodoContext from "../../context/todo-context";
 
-const ToDoInput = (e) => {
+const ToDoInput = () => {
   const [todo, setTodo] = useState("");
   const { addTodo } = useContext(TodoContext);
 
