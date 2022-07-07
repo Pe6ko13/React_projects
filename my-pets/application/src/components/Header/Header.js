@@ -1,69 +1,71 @@
-import { Link } from "react-router-dom";
-import { useEffect, useContext } from "react";
-import AuthContext from "../../contexts/AuthContext";
-import { auth } from "../../utils/firebase";
+import { Link } from 'react-router-dom';
+import { useEffect, useContext } from 'react';
+import AuthContext from '../../contexts/AuthContext';
+import { auth } from '../../utils/firebase';
 
 const Header = () => {
-  const { username } = useContext(AuthContext);
+    const { username } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     return;
-  //   }
+    // useEffect(() => {
+    //   if (!isAuthenticated) {
+    //     return;
+    //   }
 
-  //   auth.currentUser
-  //     .getIdToken()
-  //     .then(function (idToken) {
-  //       return fetch("http://localhost:5001", {
-  //         headers: { Authorization: idToken },
-  //       });
-  //     })
-  //     .then((res) => res.json());
-  // }, [isAuthenticated]);
+    //   auth.currentUser
+    //     .getIdToken()
+    //     .then(function (idToken) {
+    //       return fetch("http://localhost:5001", {
+    //         headers: { Authorization: idToken },
+    //       });
+    //     })
+    //     .then((res) => res.json());
+    // }, [isAuthenticated]);
 
-  return (
-    <header id="site-header">
-      <nav className="navbar">
-        {username ? (
-          <section className="navbar-dashboard">
-            <div className="first-bar">
-              <Link to="/categories">Dashboard</Link>
+    return (
+        <header id='site-header'>
+            <nav className='navbar'>
+                {username ? (
+                    <section className='navbar-dashboard'>
+                        <div className='first-bar'>
+                            <Link to='/categories'>Dashboard</Link>
 
-              <Link className="button" to="/pets/create">
-                Add Pet
-              </Link>
-            </div>
-            <div className="second-bar">
-              <ul>
-                <li>Welcome, {username}</li>
+                            <Link className='button' to='/pets/create'>
+                                Add Pet
+                            </Link>
+                        </div>
+                        <div className='second-bar'>
+                            <ul>
+                                <li>Welcome, {username}</li>
 
-                <li>
-                  <Link to="/logout">
-                    <i className="fas fa-sign-out-alt"></i> Logout
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </section>
-        ) : (
-          <section className="navbar-anonymous">
-            <ul>
-              <li>
-                <Link to="/register">
-                  <i className="fas fa-user-plus"></i> Register
-                </Link>
-              </li>
-              <li>
-                <Link to="/login">
-                  <i className="fas fa-sign-in-alt"></i> Login
-                </Link>
-              </li>
-            </ul>
-          </section>
-        )}
-      </nav>
-      <style>
-        {`
+                                <li>
+                                    <Link to='/logout'>
+                                        <i className='fas fa-sign-out-alt'></i>{' '}
+                                        Logout
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                ) : (
+                    <section className='navbar-anonymous'>
+                        <ul>
+                            <li>
+                                <Link to='/register'>
+                                    <i className='fas fa-user-plus'></i>{' '}
+                                    Register
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/login'>
+                                    <i className='fas fa-sign-in-alt'></i> Login
+                                </Link>
+                            </li>
+                        </ul>
+                    </section>
+                )}
+            </nav>
+            <style>
+                {`
           nav.navbar {
             display: flex;
             flex-wrap: wrap;
@@ -170,9 +172,9 @@ const Header = () => {
             display: flex;
           }
         `}
-      </style>
-    </header>
-  );
+            </style>
+        </header>
+    );
 };
 
 export default Header;
