@@ -7,6 +7,7 @@ function Home() {
     return (
         <div>
             <Popular />
+            <Veg />
         </div>
     );
 }
