@@ -45,13 +45,19 @@ const SLink = styled(NavLink)`
     height: 6rem;
     cursor: pointer;
     transform: scale(0.9);
+    box-shadow: 2px 2px 5px green;
 
     svg {
         font-size: 1.5rem;
     }
 
+    &:hover {
+        transform: scale(1);
+    }
+
     &.active {
         background: orange;
+        box-shadow: 2px 2px 5px orangered;
     }
 `;
 

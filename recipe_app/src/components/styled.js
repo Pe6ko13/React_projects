@@ -10,6 +10,7 @@ export const Card = styled.div`
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
+    box-shadow: 2px 2px 5px 2px gray;
 
     img {
         border-radius: 2rem;
