@@ -38,6 +38,22 @@ function Rrecipe() {
                 >
                     Ingredients
                 </Button>
+                {activeTab == 'instructions' && (
+                    <div>
+                        <h3
+                            dangerouslySetInnerHTML={{
+                                __html: details.instructions,
+                            }}
+                        ></h3>
+                    </div>
+                )}
+                {activeTab == 'ingredients' && (
+                    <ul>
+                        {details.extendedIngredients.map((i) => (
+                            <li key={i.id}>{i.original}</li>
+                        ))}
+                    </ul>
+                )}
             </Info>
         </DetailWrapper>
     );
@@ -47,6 +63,7 @@ const DetailWrapper = styled.div`
     margin-top: 10rem;
     margin-bottom: 5rem;
     display: flex;
+
     .active {
         background: linear-gradient(35deg, #494949, #313131);
         color: white;
@@ -60,6 +77,9 @@ const DetailWrapper = styled.div`
     }
     ul {
         margin-top: 2rem;
+    }
+    ol {
+        text-align: left;
     }
 `;
 
