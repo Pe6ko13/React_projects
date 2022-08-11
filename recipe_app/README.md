@@ -4,6 +4,8 @@ Web application for sharing photos and information about your secret recipes.
 
 The page is usable on mobile and desktop devices.
 
+Link to SearchAddress web page:
+
 ## Used Technologies:
 
 -   [x] React Web
